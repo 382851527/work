@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a href="#">
+                <img src="img/图片1.png" alt="">
+            </a>           
+            <a href="#">
+                <i class="icon iconfont icon-fangdajing"></i>
+                <i class="icon iconfont icon-gongzuo"></i>
+            </a>
+        </header>
+        <section>
+            <div class="swiper-container banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/ban1.jpg" alt="">
+                    </div>
+                     <div class="swiper-slide">
+                        <img src="img/ban2.jpg" alt="">
+                    </div>
+                     <div class="swiper-slide">
+                        <img src="img/ban3.jpg" alt="">
+                    </div>
+                     <div class="swiper-slide">
+                        <img src="img/ban4.jpg" alt="">
+                    </div>
+                     <div class="swiper-slide">
+                        <img src="img/ban5.jpg" alt="">
+                    </div>
+                     <div class="swiper-slide">
+                        <img src="img/ban6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="box">
+                <p>               
+                     <b><i class="icon iconfont icon-071"></i>全国——必胜客代金券5折GO</b>
+                     <span>2017-11-01</span>
+                </p>
+                <p>               
+                     <b><i class="icon iconfont icon-dingwei"></i>关于我行企业张银被是的v就不开的房间是尿酸等你</b>
+                     <span>2017-11-29</span>
+                </p>
+            </div>
+            <div class="list">
+                <p>便捷服务</p>
+                <ul>
+                    <li>
+                        <i class="icon iconfont icon-gouwuche"></i>
+                        <span>掌上银行</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-wode"></i>
+                        <span>行情数据</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-youxiang"></i>
+                        <span>咱先预约</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-zhihu"></i>
+                        <span>我的</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-qq"></i>
+                        <span>注册</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-pengyouquan"></i>
+                        <span>登录银行</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-xinlang1"></i>
+                        <span>智能服务</span>
+                    </li>
+                    <li>
+                        <i class="icon iconfont icon-Qzone"></i>
+                        <span>网上预约</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cen">
+                <p></p>
+                 <p>               
+                     <b><i></i>学生时代</b>
+                     <span><i class="icon iconfont icon-angle-down"></i></span>
+                </p>
+                 <p>               
+                     <b><i></i>学生时代</b>
+                     <span><i class="icon iconfont icon-angle-down"></i></span>
+                </p>
+                 <p>               
+                     <b><i></i>学生时代</b>
+                     <span><i class="icon iconfont icon-angle-up"></i></span>                  
+                </p>
+                <div class="box">
+                        <img src="img/图片2.png" alt="">
+                </div>
+            </div>
+           
+            <div class="cen cenn">
+                     <p>产品 服务</p>
+                     <p>               
+                         <b><i></i>学生时代</b>
+                         <span><i class="icon iconfont icon-angle-down"></i></span>
+                    </p>
+                     <p>               
+                         <b><i></i>学生时代</b>
+                         <span><i class="icon iconfont icon-angle-down"></i></span>
+                    </p>
+                     <p>               
+                         <b><i></i>学生时代</b>
+                         <span><i class="icon iconfont icon-angle-up"></i></span>                  
+                    </p>
+                    
+                </div>
+        </section>
+       
+    </div>
+    <script src="./swiper.min.js"></script>
+    <script>
+        var swiper=new Swiper('.banner',{
+            pagination:".swiper-pagination",
+            autoplay:2000,
+            loop:true
+        });
+
+        function ajax(url){
+            return new Promise(function (resolve, reject){
+                var xhr = null;
+                var handler = function(){
+                    if(xhr.readyState !== 4) return;
+                    if(xhr.status === 200){
+                        resolve(xhr.responseText)
+                    }else{
+                        reject(new Error('error')); 
+                    }
+                }
+                if(window.XMLHttpRequest){
+                    xhr =  new XMLHttpRequest();
+                }else{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhr.open('get',url,true);
+                xhr.send(null);
+                xhr.onreadystatechange = handler;
+            })
+        }
+        ajax("http://localhost:8090")
+    </script>
+</body>
+</html>
